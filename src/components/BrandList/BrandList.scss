@@ -1,0 +1,56 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.brands {
+  @include container($container-marcas);
+  padding: $sp-32 $sp-16 $sp-48;
+
+  &__title {
+    color: $azul;
+    font-size: $fs-24;
+    font-weight: $peso-semibold;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 38px;
+    margin-top: $sp-32;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $tamanho-marca;
+    height: $tamanho-marca;
+    background: $branco;
+    border-radius: $radius-circulo;
+    box-shadow: $sombra-suave;
+    @include foco-visivel;
+
+    img {
+      width: 110px;
+      height: auto;
+    }
+  }
+
+  @include tablet {
+    &__list {
+      gap: $sp-24;
+    }
+  }
+
+  @include mobile {
+    &__item {
+      width: 140px;
+      height: 140px;
+
+      img {
+        width: 84px;
+      }
+    }
+  }
+}

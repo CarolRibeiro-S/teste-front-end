@@ -1,0 +1,118 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.newsletter {
+  width: 100%;
+  background: $roxo;
+  color: $branco;
+
+  &__inner {
+    @include container($container-vitrine);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $sp-48;
+    padding: $sp-48 $sp-16;
+  }
+
+  &__text {
+    max-width: 440px;
+    font-size: $fs-14;
+    font-weight: $peso-light;
+  }
+
+  &__title {
+    margin-bottom: $sp-8;
+    font-family: $fonte-titulo-newsletter;
+    font-size: $fs-28;
+    font-weight: $peso-medio;
+  }
+
+  &__form {
+    flex: 1;
+    max-width: 720px;
+  }
+
+  &__fields {
+    display: flex;
+    gap: $sp-12;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      height: 44px;
+      padding-inline: $sp-16;
+      background: $branco;
+      border: 0;
+      border-radius: $radius-5;
+      color: $texto-escuro;
+      font-size: $fs-14;
+      @include foco-visivel;
+
+      &::placeholder {
+        color: $texto-escuro;
+        opacity: 0.71;
+      }
+    }
+  }
+
+  &__submit {
+    @include botao-base;
+    height: 44px;
+    padding-inline: $sp-32;
+    background: $amarelo;
+    border-radius: $radius-5;
+    color: $texto-escuro;
+    font-size: $fs-14;
+    @include foco-visivel;
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: $sp-8;
+    margin-top: $sp-12;
+    font-size: $fs-12;
+    cursor: pointer;
+
+    input {
+      width: 16px;
+      height: 16px;
+      accent-color: $amarelo;
+    }
+  }
+
+  &__feedback {
+    min-height: 1.5em;
+    margin-top: $sp-8;
+    font-size: $fs-12;
+    color: $amarelo;
+
+    &--error {
+      color: $branco;
+      font-weight: $peso-semibold;
+    }
+  }
+
+  @include tablet {
+    &__inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: $sp-24;
+    }
+
+    &__form {
+      max-width: none;
+    }
+  }
+
+  @include mobile {
+    &__fields {
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: $fs-24;
+    }
+  }
+}

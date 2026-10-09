@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $sp-16;
+  background: $branco;
+  border-radius: $radius-5;
+  box-shadow: $sombra-suave;
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    @include foco-visivel;
+  }
+
+  &__image {
+    width: 100%;
+    height: 180px;
+    margin-bottom: $sp-16;
+    object-fit: contain;
+  }
+
+  &__description {
+    min-height: 2.8em;
+    color: $texto;
+    font-size: $fs-14;
+    font-weight: $peso-light;
+    line-height: 1.4;
+    @include truncar-linhas(2);
+  }
+
+  &__price {
+    margin-top: $sp-12;
+    color: $texto;
+    font-size: $fs-18;
+    font-weight: $peso-bold;
+  }
+
+  &__installments {
+    margin-top: $sp-4;
+    color: $texto;
+    font-size: $fs-10;
+    font-weight: $peso-regular;
+  }
+
+  &__shipping {
+    margin-top: $sp-8;
+    margin-bottom: $sp-16;
+    color: $azul;
+    font-size: $fs-10;
+    font-weight: $peso-medio;
+  }
+
+  &__buy {
+    @include botao-base;
+    width: 100%;
+    height: 40px;
+    background: $azul;
+    border-radius: $radius-3;
+    color: $branco;
+    font-size: $fs-12;
+    @include foco-visivel;
+  }
+}

@@ -1,0 +1,140 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  background: $branco;
+
+  &__main {
+    @include container($container-header);
+    display: flex;
+    align-items: center;
+    gap: $sp-48;
+    height: 64px;
+    padding-top: $sp-8;
+  }
+
+  &__logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  &__search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: 700px;
+    height: 44px;
+    margin-inline: auto;
+    padding-inline: $sp-24;
+    background: $fundo-cinza;
+    border-radius: $radius-5;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: $texto;
+      font-size: $fs-14;
+      font-weight: $peso-light;
+
+      &::placeholder {
+        color: $cinza-menu;
+      }
+    }
+
+    button {
+      display: flex;
+      color: $cinza-menu;
+      @include foco-visivel;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $sp-24;
+    color: $roxo;
+
+    button {
+      display: flex;
+      @include foco-visivel;
+    }
+  }
+
+  &__nav {
+    @include container($container-header);
+    height: $altura-nav;
+    background: $branco;
+    border: 0;
+    box-shadow: $sombra-nav;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      padding-inline: $sp-40;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: $sp-4;
+      color: $cinza-menu;
+      font-size: $fs-12;
+      font-weight: $peso-regular;
+      text-transform: uppercase;
+      @include foco-visivel;
+    }
+  }
+
+  &__nav &__nav-highlight {
+    color: $roxo;
+    font-weight: $peso-bold;
+  }
+
+  &__nav-crown svg {
+    color: $roxo;
+  }
+
+  @include tablet {
+    &__main {
+      padding-inline: $sp-16;
+      gap: $sp-24;
+    }
+  }
+
+  @include mobile {
+    &__main {
+      flex-wrap: wrap;
+      gap: $sp-12;
+      height: auto;
+      padding-block: $sp-12;
+    }
+
+    &__search {
+      order: 3;
+      flex-basis: 100%;
+      max-width: none;
+    }
+
+    &__actions {
+      gap: $sp-16;
+      margin-left: auto;
+    }
+
+    &__nav {
+      height: auto;
+      overflow-x: auto;
+
+      ul {
+        gap: $sp-24;
+        justify-content: flex-start;
+        height: $altura-nav;
+        padding-inline: $sp-16;
+        white-space: nowrap;
+      }
+    }
+  }
+}

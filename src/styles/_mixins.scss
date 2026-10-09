@@ -1,0 +1,68 @@
+@use 'variables' as *;
+
+@mixin tablet {
+  @media (max-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) {
+    @content;
+  }
+}
+
+@mixin container($largura) {
+  width: 100%;
+  max-width: $largura;
+  margin-inline: auto;
+}
+
+@mixin botao-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  font-family: $fonte-base;
+  font-weight: $peso-bold;
+  text-transform: uppercase;
+  transition: filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.93);
+  }
+}
+
+@mixin foco-visivel {
+  &:focus-visible {
+    outline: 2px solid $violeta-ativo;
+    outline-offset: 2px;
+  }
+}
+
+@mixin truncar-linhas($linhas) {
+  display: -webkit-box;
+  -webkit-line-clamp: $linhas;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin titulo-secao {
+  display: flex;
+  align-items: center;
+  gap: $sp-24;
+  margin: 0;
+  color: $azul;
+  font-size: $fs-24;
+  font-weight: $peso-semibold;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $divisor;
+  }
+}

@@ -1,0 +1,108 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $fundo-cinza;
+
+  &__main {
+    @include container($container-vitrine);
+    display: flex;
+    justify-content: space-between;
+    gap: $sp-48;
+    padding: $sp-64 $sp-16;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-16;
+    max-width: 320px;
+    padding-right: $sp-48;
+    border-right: 1px solid $divisor;
+    color: $cinza-rodape;
+    font-size: $fs-14;
+  }
+
+  &__logo {
+    width: 130px;
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+
+  &__social {
+    display: flex;
+    gap: $sp-16;
+    color: $roxo;
+
+    a {
+      display: flex;
+      transition: opacity 0.2s ease;
+      @include foco-visivel;
+
+      &:hover {
+        opacity: $opacidade-hover;
+      }
+    }
+  }
+
+  &__columns {
+    display: flex;
+    gap: $sp-80;
+  }
+
+  &__column-title {
+    margin-bottom: $sp-16;
+    color: $texto;
+    font-size: $fs-16;
+    font-weight: $peso-semibold;
+  }
+
+  &__column ul {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-12;
+  }
+
+  &__column a {
+    color: $cinza-rodape;
+    font-size: $fs-14;
+    @include foco-visivel;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__copy {
+    padding: $sp-20 $sp-16;
+    background: $branco;
+    color: $cinza-rodape;
+    font-size: $fs-12;
+    text-align: center;
+  }
+
+  @include tablet {
+    &__main {
+      flex-direction: column;
+    }
+
+    &__brand {
+      max-width: none;
+      padding-right: 0;
+      padding-bottom: $sp-24;
+      border-right: 0;
+      border-bottom: 1px solid $divisor;
+    }
+
+    &__columns {
+      gap: $sp-48;
+    }
+  }
+
+  @include mobile {
+    &__columns {
+      flex-direction: column;
+      gap: $sp-24;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+// Cores
+$azul: #3442b5;
+$roxo: #271c47;
+$amarelo: #f7ca11;
+$violeta-ativo: #3019b2;
+$texto: #3b3b3b;
+$texto-escuro: #222222;
+$cinza-menu: #808080;
+$cinza-rodape: #676767;
+$borda: #dedede;
+$divisor: #e7e7e7;
+$fundo-cinza: #f4f4f4;
+$borda-modal: #707070;
+$branco: #ffffff;
+$preto: #000000;
+$erro: #c62828;
+$overlay-modal: rgba(0, 0, 0, 0.3);
+$overlay-banner: rgba(0, 0, 0, 0.45);
+
+// Tipografia
+$fonte-base: 'Poppins', sans-serif;
+$fonte-titulo-newsletter: 'Outfit', sans-serif;
+$peso-light: 300;
+$peso-regular: 400;
+$peso-medio: 500;
+$peso-semibold: 600;
+$peso-bold: 700;
+
+$fs-10: 0.6875rem;
+$fs-12: 0.75rem;
+$fs-13: 0.8125rem;
+$fs-14: 0.875rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-24: 1.5rem;
+$fs-28: 1.75rem;
+$fs-32: 2rem;
+$fs-40: 2.5rem;
+$fs-48: 3rem;
+
+// Espaçamentos
+$sp-4: 4px;
+$sp-8: 8px;
+$sp-12: 12px;
+$sp-16: 16px;
+$sp-20: 20px;
+$sp-24: 24px;
+$sp-32: 32px;
+$sp-40: 40px;
+$sp-48: 48px;
+$sp-64: 64px;
+$sp-80: 80px;
+
+$opacidade-hover: 0.7;
+
+// Raios e sombras
+$radius-3: 3px;
+$radius-5: 5px;
+$radius-20: 20px;
+$radius-circulo: 50%;
+$sombra-suave: 0 3px 10px rgba(0, 0, 0, 0.1);
+$sombra-forte: 0 6px 16px rgba(0, 0, 0, 0.22);
+$sombra-nav: 0 2px 8px rgba(0, 0, 0, 0.08);
+$sombra-seta: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+// Medidas do layout (referência desktop 1440px)
+$largura-referencia: 1440px;
+$container-header: 1280px;
+$container-categorias: 1160px;
+$container-vitrine: 1280px;
+$container-banners: 1281px;
+$container-marcas: 1250px;
+$largura-banner: 574px;
+$altura-banner: 350px;
+$altura-banner-mobile: 320px;
+$banner-padding-esquerdo: 40px;
+$banner-margem-inferior: 35px;
+$largura-cards-vitrine: 1160px;
+$altura-nav: 40px;
+$altura-topbar: 40px;
+$altura-hero: 390px;
+$tamanho-categoria: 115px;
+$tamanho-marca: 188px;
+
+// Breakpoints
+$bp-tablet: 1024px;
+$bp-mobile: 640px;

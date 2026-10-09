@@ -1,0 +1,99 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.promo-banners {
+  padding: $sp-16 $sp-16 $sp-48;
+
+  &__list {
+    @include container($container-banners);
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+  }
+
+  &__item {
+    flex: 0 1 $largura-banner;
+    min-width: 0;
+  }
+
+  @include tablet {
+    &__list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      flex-basis: auto;
+      width: 100%;
+      max-width: $largura-banner;
+    }
+  }
+}
+
+.promo-banner {
+  position: relative;
+  display: flex;
+  height: $altura-banner;
+  overflow: hidden;
+  border-radius: $radius-20;
+  color: $branco;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $overlay-banner;
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 $sp-24 $banner-margem-inferior $banner-padding-esquerdo;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: $fs-40;
+    font-weight: $peso-bold;
+    line-height: 1.1;
+  }
+
+  &__text {
+    max-width: 180px;
+    margin-top: $sp-8;
+    font-size: $fs-16;
+    font-weight: $peso-regular;
+  }
+
+  &__button {
+    @include botao-base;
+    margin-top: $sp-16;
+    padding: 10px $sp-32;
+    background: $amarelo;
+    border-radius: $radius-5;
+    color: $texto-escuro;
+    font-size: $fs-14;
+    @include foco-visivel;
+  }
+
+  @include mobile {
+    height: $altura-banner-mobile;
+
+    &__title {
+      font-size: $fs-32;
+    }
+  }
+}

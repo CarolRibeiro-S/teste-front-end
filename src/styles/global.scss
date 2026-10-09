@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'reset';
+
+body {
+  min-width: 320px;
+  background: $branco;
+  color: $texto;
+  font-family: $fonte-base;
+  font-weight: $peso-regular;
+  line-height: 1.5;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}

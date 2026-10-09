@@ -1,0 +1,81 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.categories {
+  padding: $sp-48 $sp-16 $sp-32;
+
+  &__list {
+    @include container($container-categorias);
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $sp-12;
+    width: $tamanho-categoria;
+    color: $texto;
+    font-size: $fs-13;
+    font-weight: $peso-regular;
+    text-align: center;
+    @include foco-visivel;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $tamanho-categoria;
+    height: $tamanho-categoria;
+    background: $fundo-cinza;
+    border-radius: $radius-5;
+    box-shadow: $sombra-suave;
+    transition: box-shadow 0.2s ease;
+
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__item:hover &__box {
+    box-shadow: $sombra-forte;
+  }
+
+  &__item--active {
+    color: $violeta-ativo;
+    font-weight: $peso-bold;
+  }
+
+  &__item--active &__box {
+    background: $branco;
+    box-shadow: $sombra-forte;
+  }
+
+  @include tablet {
+    &__list {
+      flex-wrap: wrap;
+      gap: $sp-24;
+    }
+  }
+
+  @include mobile {
+    &__list {
+      gap: $sp-16;
+    }
+
+    &__item,
+    &__box {
+      width: 96px;
+    }
+
+    &__box {
+      height: 96px;
+    }
+  }
+}

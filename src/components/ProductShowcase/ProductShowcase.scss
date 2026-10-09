@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.showcase {
+  @include container($container-vitrine);
+  padding: $sp-32 $sp-16 $sp-48;
+
+  &__content {
+    width: 100%;
+    max-width: $largura-cards-vitrine;
+    margin-inline: auto;
+  }
+
+  &__title {
+    @include titulo-secao;
+    padding-inline: $sp-40;
+  }
+
+  &__see-all {
+    display: block;
+    margin-top: $sp-8;
+    color: $texto;
+    font-size: $fs-12;
+    font-weight: $peso-bold;
+    text-align: center;
+    text-decoration: underline;
+    @include foco-visivel;
+  }
+
+  &__tabs {
+    display: flex;
+    margin-block: $sp-24 $sp-24;
+  }
+
+  &__tabs > li {
+    flex: 1;
+  }
+
+  &__tab {
+    width: 100%;
+    height: 40px;
+    margin-left: -1px;
+    border: 1px solid $borda;
+    color: $texto;
+    font-size: $fs-12;
+    font-weight: $peso-regular;
+    text-transform: uppercase;
+    @include foco-visivel;
+
+    &--active {
+      color: $azul;
+      font-weight: $peso-bold;
+    }
+  }
+
+  &__status {
+    margin-top: $sp-32;
+    text-align: center;
+
+    &--error {
+      color: $erro;
+    }
+  }
+
+  .carousel {
+    margin-top: $sp-24;
+  }
+
+  &__tabs + .carousel {
+    margin-top: 0;
+  }
+
+  @include tablet {
+    padding-inline: $sp-48;
+  }
+
+  @include mobile {
+    &__title {
+      padding-inline: 0;
+      font-size: $fs-20;
+      gap: $sp-12;
+    }
+
+    &__tabs {
+      overflow-x: auto;
+    }
+
+    &__tabs > li {
+      flex: 0 0 auto;
+    }
+
+    &__tab {
+      padding-inline: $sp-16;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.top-bar {
+  height: $altura-topbar;
+  border-bottom: 1px solid $divisor;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $sp-64;
+    height: 100%;
+    padding-inline: $sp-16;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $sp-8;
+    color: $texto;
+    font-size: $fs-12;
+    white-space: nowrap;
+
+    svg {
+      color: $roxo;
+    }
+
+    strong {
+      color: $roxo;
+      font-weight: $peso-bold;
+    }
+  }
+
+  @include tablet {
+    &__list {
+      gap: $sp-24;
+    }
+  }
+
+  @include mobile {
+    height: auto;
+
+    &__list {
+      flex-direction: column;
+      gap: $sp-4;
+      padding-block: $sp-8;
+    }
+  }
+}

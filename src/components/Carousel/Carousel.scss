@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.carousel {
+  position: relative;
+
+  // O viewport avança $sp-12 para cada lado (espaço do padding dos slides),
+  // de modo que o primeiro e o último card encostam nas bordas do carrossel.
+  &__viewport {
+    margin-inline: -$sp-12;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    min-width: 0;
+    padding: $sp-8 $sp-12 $sp-16;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    background: $branco;
+    border-radius: $radius-circulo;
+    box-shadow: $sombra-seta;
+    color: $texto;
+    @include foco-visivel;
+
+    &--prev {
+      left: -$sp-48;
+    }
+
+    &--next {
+      right: -$sp-48;
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.4;
+    }
+  }
+
+  @include mobile {
+    &__arrow {
+      width: 32px;
+      height: 32px;
+      margin-top: -16px;
+
+      &--prev {
+        left: -$sp-40;
+      }
+
+      &--next {
+        right: -$sp-40;
+      }
+    }
+  }
+}
